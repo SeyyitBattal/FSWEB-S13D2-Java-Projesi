@@ -14,15 +14,23 @@ public class Main {
         System.out.println(numberToWords(-12));
     }
 
-    //Palindrom Sayıyı Bulma
+    //Palindrom Sayıyı Bulma +
     public static boolean isPalindrome(int num) {
         int temp = num, reverseNumber = 0, lastNumber;
+        if(num < 0){
+            temp = temp * -1;
+            num = num * -1;
+        }
         while (temp != 0) {
             lastNumber = temp % 10;
             reverseNumber = (reverseNumber * 10) + lastNumber;
             temp /= 10;
         }
-        return true;
+        System.out.println("Bu num: " + num);
+        System.out.println("Bu reverse: "+ reverseNumber);
+
+        if(num == reverseNumber) return true;
+        return false;
     }
 
 
